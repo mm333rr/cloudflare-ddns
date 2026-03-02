@@ -1,0 +1,34 @@
+# =============================================================================
+# cloudflare-ddns — unified WAN IP updater for all am180.us subdomains
+# Host: mbuntu — covers all services (arr-stack + observability)
+# Was: split between Mac Pro (observability) + mbuntu (arr-stack)
+# Now: single container on mbuntu manages all domains
+#
+# 2026-02-21 v2.0.0 — consolidated from Mac Pro + mbuntu
+# =============================================================================
+
+services:
+  cloudflare-ddns:
+    image: favonia/cloudflare-ddns:latest
+    container_name: cloudflare-ddns-mbuntu
+    restart: unless-stopped
+    network_mode: host
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    env_file:
+      - /srv/docker/secrets/cloudflare.env
+    environment:
+      DOMAINS: >-
+        sonarr.am180.us,radarr.am180.us,prowlarr.am180.us,overseerr.am180.us,
+        qbit.am180.us,bitmagnet.am180.us,jackett.am180.us,mail.am180.us,
+        grafana.am180.us,prometheus.am180.us,alertmanager.am180.us,
+        adguard.am180.us,
+        lidarr.am180.us,stack.am180.us
+      IP6_PROVIDER: none
+      UPDATE_CRON: "@every 5m"
+      TZ: America/Los_Angeles
+    labels:
+      - stack=infrastructure

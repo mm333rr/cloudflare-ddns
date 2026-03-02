@@ -1,0 +1,4 @@
+cloudflare.env
+*.bak
+*.bak.*
+.DS_Store
