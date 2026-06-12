@@ -22,7 +22,7 @@ services:
       - /srv/docker/secrets/cloudflare.env
     environment:
       DOMAINS: >-
-        sonarr.am180.us,radarr.am180.us,prowlarr.am180.us,seerr.am180.us,overseerr.am180.us, hiruzen.am180.us
+        sonarr.am180.us,radarr.am180.us,prowlarr.am180.us,seerr.am180.us,overseerr.am180.us
         qbit.am180.us,bitmagnet.am180.us,jackett.am180.us,mail.am180.us,
         grafana.am180.us,prometheus.am180.us,alertmanager.am180.us,
         adguard.am180.us,
