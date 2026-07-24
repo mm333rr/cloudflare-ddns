@@ -26,6 +26,7 @@ services:
         qbit.am180.us,bitmagnet.am180.us,jackett.am180.us,mail.am180.us,
         grafana.am180.us,prometheus.am180.us,alertmanager.am180.us,
         adguard.am180.us,
+        shindenshin.am180.us,
         lidarr.am180.us,stack.am180.us
       IP6_PROVIDER: none
       UPDATE_CRON: "@every 5m"
