@@ -2,3 +2,8 @@ cloudflare.env
 *.bak
 *.bak.*
 .DS_Store
+
+# local backups
+*.bak
+*.bak-*
+*.bak.*
